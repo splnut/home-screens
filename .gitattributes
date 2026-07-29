@@ -1,0 +1,4 @@
+# Shell scripts run inside Linux containers/hosts regardless of checkout
+# platform — force LF so a Windows clone with autocrlf=true can't convert
+# docker-entrypoint.sh (or scripts/*.sh) to CRLF and break the shebang.
+*.sh text eol=lf

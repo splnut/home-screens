@@ -81,6 +81,18 @@ Then visit:
 - `http://localhost:3000/editor` — configure your screens
 - `http://localhost:3000/display` — fullscreen display view
 
+### Docker
+
+```bash
+git clone https://github.com/home-screens/home-screens.git
+cd home-screens
+docker compose up -d --build
+```
+
+Runs the server (editor + display) in a container, independent of the Pi
+kiosk pieces. See [docs/DOCKER.md](docs/DOCKER.md) for persistent data,
+custom ports, and updating.
+
 ## Configuration
 
 All API keys and credentials are managed through the editor UI at **Settings > API keys**. No `.env.local` file needed. Configuration is stored as a single JSON file (`data/config.json`) — no database.

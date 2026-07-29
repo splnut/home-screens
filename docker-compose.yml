@@ -1,0 +1,17 @@
+services:
+  home-screens:
+    build: .
+    image: home-screens:local
+    container_name: home-screens
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      # Only needed if you use Google Calendar OAuth from a non-default URL.
+      # NEXTAUTH_URL: "http://localhost:3000"
+    volumes:
+      # Config, secrets, plugins, backups — the whole runtime state tree.
+      - ./data:/app/data
+      # User-uploaded/rotated background images and videos.
+      - ./public/backgrounds:/app/public/backgrounds
